@@ -6,13 +6,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CodersCamp | Projekt 1 - HTML i CSS</title>
-    <meta name="description" content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
+    <meta name="description"
+        content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/712cb378c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__inner container">
+            <a class="logo header__logo" href="#main">LEV</a>
+            <input type="checkbox" id="check">
+            <nav class="header__nav">
+                <a class="header__nav-link" href="#about">about me</a>
+                <a class="header__nav-link" href="#skills">skills</a>
+                <a class="header__nav-link" href="#portfolio">portfolio</a>
+                <a class="header__nav-link" href="#contact">contact</a>
+            </nav>
 
-<p>CodersCamp - projekt 1. Tutaj możesz zacząć swoją zabawę!</p>
+            <div class="header__media">
+                <p>follow me</p>
+                <a class="header__media-link" href="https://www.instagram.com/lk17.5_/"><img class="header__media-icon"
+                        src="img/instagram.svg" alt=""><a href=""></a>
+                    <a class="header__media-link" href="https://www.facebook.com/lew.konopajew"><img
+                            class="header__media-icon" src="img/facebook.svg" alt=""><a href=""></a>
+            </div>
+            <label class="header__menu-btn" for="check">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </label>
 
+            <!-- <div class="header__menu-bar">
+
+            </div> -->
+        </div>
+    </header>
+    <main class="main" id="main">
+        <div class="main__text">
+            <h1 class="main__title">Hey, my name is Lew</h1>
+            <p class="main__subtext">I am a junior web developer</p>
+        </div>
+    </main>
+    <div class="intro">
+
+    </div>
 </body>
+
 </html>
