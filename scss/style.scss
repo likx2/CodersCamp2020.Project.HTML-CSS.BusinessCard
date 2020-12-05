@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 18px;
+}
+
 body {
-    background-color: #34495e;
     font-family: 'Mulish',
         sans-serif;
     color: white;
@@ -46,12 +49,22 @@ body {
 
         &-link {
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
             color: white;
-            transition: color 0.3s;
+            transition-property: margin, font-weight;
+            transition-duration: 0.4s, 0.2s;
 
             &:hover {
-                color: lighten($color: #000000, $amount: 80%);
+
+                &:nth-child(1) {
+                    margin: 0 0 0 -15px;
+                }
+
+                &:last-child {
+                    margin: 0 -15px 0 0;
+                }
+
+                font-weight: 800;
             }
 
             @media(max-width: 772px) {
@@ -69,7 +82,7 @@ body {
             position: absolute;
             top: 0;
             right: -100%;
-            width: 60%;
+            width: 70%;
             height: 100vh;
             flex-direction: column;
             justify-content: center;
@@ -86,10 +99,15 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        font-size: 16px;
+        font-size: 1rem;
 
         &-link {
             margin: 0 0 0 10px;
+            transition: transform 0.5s;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
         }
 
         &-icon {
@@ -112,6 +130,7 @@ body {
         .fa-times,
         .fa-bars {
             display: none;
+            font-size: 20px;
         }
 
         @media(max-width: 772px) {
@@ -120,12 +139,16 @@ body {
             }
         }
     }
+
+    @media(max-width: 556px) {
+        height: 50px;
+    }
 }
 
 #check {
     position: absolute;
     visibility: none;
-    left: -999999px;
+    left: -9999px;
 
     &:checked~nav {
         right: 0;
@@ -145,14 +168,21 @@ body {
 
 .logo {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
+
+    @media(max-width: 576px) {
+        font-size: 1rem;
+    }
+
 
 }
 
 .main {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background-image: url('../img/header_bg.jpg');
     background-color: rgba(0, 0, 0, 0.5);
@@ -162,13 +192,134 @@ body {
     background-size: cover;
 
     &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: fit-content;
+        margin: 0 auto;
+
+        @media(max-width: 768px) {
+            margin: 0 auto 0 0;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        line-height: 120%;
+        font-weight: 800;
+
+        br {
+            display: none;
+        }
+
+        @media(max-width: 576px) {
+            font-size: 2rem;
+            margin: -40px 0 0 0;
+
+            br {
+                display: block;
+            }
+        }
+
+    }
+
+    &__subtext {
+        font-size: 1.5rem;
+        line-height: 120%;
+        margin: 5px 0 0 0;
+        opacity: 0;
+
+
+        @media(max-width: 576px) {
+            font-size: 1rem;
+        }
+
+    }
+
+    &__fade,
+    &__subtext {
+        animation-name: fade;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .fade-1 {
+        animation-delay: 0.5s;
+        opacity: 0;
+    }
+
+    .fade-2 {
+        animation-delay: 1.8s;
+        opacity: 0;
+    }
+
+    &__subtext {
+        animation-delay: 2.8s;
+    }
+
+
+}
+
+.about {
+    padding: 150px 0 50px 0;
+    background-color: #2f3640;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @media(max-width: 576px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__text {
+        width: 60%;
+
+        @media(max-width: 576px) {
+            width: 100%;
+            margin: 20px 0 0 0;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: 120%;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+
+        @media(max-width:576px) {
+            margin: 0 0 8px 0;
+        }
+    }
+
+    &__pic {
+        width: 32%;
+        text-align: right;
+
+        @media(max-width: 576px) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px rgba($color: (#000000), $alpha: 0.5);
+    }
+
+    @media(max-width: 576px) {
+        padding: 50px 0;
     }
 }
 
-.intro {
-    height: 100vh;
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
 }
