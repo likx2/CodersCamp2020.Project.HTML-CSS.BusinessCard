@@ -262,31 +262,69 @@ body {
 
     }
 
-    &__fade,
-    &__subtext {
+
+    &__btn {
+        display: inline-block;
+        padding: 18px 30px;
+        margin: 50px 0 0 0;
+        background-color: rgba(44, 62, 80, 1);
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: fit-content;
+        border-radius: 50px;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 0.6);
+            background-color: lighten($color: #2c3e50, $amount: 5%)
+        }
+
+        @media(max-width:768px) {
+            font-size: 0.8rem;
+            padding: 10px 20px;
+            margin: 30px 0 0 0;
+            border-radius: 30px;
+
+        }
+
+    }
+
+    &__hey,
+    &__my,
+    &__name,
+    &__subtext,
+    &__btn {
         animation-name: fade;
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
+        opacity: 0;
     }
 
-    .fade-1 {
+    &__hey {
         animation-delay: 0.5s;
-        opacity: 0;
+
     }
 
-    .fade-2 {
+    &__my {
+        animation-delay: 1.3s;
+
+    }
+
+    &__name {
         animation-delay: 1.8s;
-        opacity: 0;
-    }
 
-    .fade-3 {
-        animation-delay: 2.5s;
-        opacity: 0;
     }
 
     &__subtext {
-        animation-delay: 3.5s;
+        animation-delay: 2.5s;
+    }
+
+    &__btn {
+        animation-delay: 3.2s;
     }
 
 
@@ -294,7 +332,11 @@ body {
 
 .about {
     padding: 150px 0 50px 0;
-    background-image: linear-gradient(#2f3640, #2c3e50);
+    // background-image: linear-gradient(#2c3e50, #2f3640);
+    background-image: linear-gradient(#2c3e50, #222f3e);
+
+
+
 
 
     &__inner {
@@ -322,9 +364,6 @@ body {
     &__desc {
         font-size: 1rem;
 
-        @media(max-width: 768px) {
-            font-size: 0.8rem;
-        }
     }
 
     &__pic {
@@ -352,7 +391,9 @@ body {
 .services {
     text-align: center;
     padding: 100px 0;
-    background-color: #2c3e50;
+    // background-color: #2f3640;
+    background-color: #222f3e;
+
 
     &__title {
         @include title-style();
@@ -369,10 +410,6 @@ body {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-
-        @media(max-width: 768px) {
-            width: 100%;
-        }
     }
 
     &__item {
@@ -395,7 +432,8 @@ body {
     &__icon {
         width: 64px;
         height: 64px;
-        fill: #F8EFBA;
+        fill: rgba(248, 239, 186, 0.8);
+
     }
 
     &__subtitle {
@@ -410,10 +448,6 @@ body {
 
     &__desc {
         font-style: 1rem;
-
-        @media(max-width: 768px) {
-            font-size: 0.8rem;
-        }
     }
 
 
