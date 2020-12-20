@@ -1,15 +1,15 @@
-@mixin title-style($marginBot:40px) {
+@mixin title-style($marginBotDesktop:40px) {
     font-size: 2.5rem;
     line-height: 120%;
     font-weight: 600;
     letter-spacing: 2px;
-    margin: 0 0 $marginBot 0;
+    margin: 0 0 $marginBotDesktop 0;
     color: white;
 
 
     @media(max-width:772px) {
         font-size: 1.5rem;
-        margin: 0 0 8px;
+        margin: 0 0 10px;
         color: white;
 
 
@@ -417,8 +417,21 @@ textarea {
     background: linear-gradient($dark_blue, $light_blue);
 
     &__title {
-        @include title-style();
+        @include title-style(20px);
 
+    }
+
+    &__subtext {
+        font-size: 1.3rem;
+        line-height: 120%;
+        letter-spacing: 2px;
+        color: white;
+        margin: 0 0 30px 0;
+
+        @media(max-width: 768px) {
+            font-size: 1rem;
+            margin: 0;
+        }
     }
 
     &__inner {
@@ -430,18 +443,18 @@ textarea {
 
     &__item {
         width: 30%;
-        padding: 20px;
+        padding: 30px 20px;
         border-radius: 20px;
         box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
 
         @media(max-width: 768px) {
-            min-width: 47%;
+            width: 47%;
             margin: 20px auto 0 auto;
 
         }
 
         @media(max-width: 576px) {
-            min-width: 100%;
+            width: 100%;
         }
     }
 
@@ -739,7 +752,7 @@ textarea {
         letter-spacing: 1px;
 
         @media(max-width: 576px) {
-            margin: 10px 0 0 0;
+            margin: 10px 0 0;
             font-size: 0.6rem;
         }
     }
